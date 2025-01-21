@@ -54,12 +54,13 @@
 		{#each items as i}
 			{@const item = group.getItem(i)}
 			<div
-				class="ring-accent-500 -ml-1 flex items-center gap-3 rounded p-1 outline-none focus-visible:ring"
+				class="ring-accent-500 -ml-1 flex items-center gap-3 rounded 
+				p-1 outline-none focus-visible:ring [&[data-disabled=true]>div]:bg-gray-300"
 				{...item.attrs}
 			>
 				<div
 					class="grid h-6 w-6 cursor-default place-items-center
-							rounded-full bg-white shadow-sm hover:bg-gray-100 data-[disabled=true]:bg-gray-400"
+							rounded-full bg-white shadow-sm hover:bg-gray-100"
 				>
 					{#if item.checked}
 						<div
@@ -68,7 +69,6 @@
 						></div>
 					{/if}
 				</div>
-
 				<span class="font-medium capitalize leading-none text-gray-100">
 					{i}
 				</span>

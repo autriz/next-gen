@@ -168,6 +168,7 @@ class RadioItem {
 	}
 
 	#select(e: Event) {
+		if (this.#group.disabled) return;
 		this.#group.select(this.value);
 		const el = e.currentTarget;
 		if (!isHtmlElement(el)) return;
